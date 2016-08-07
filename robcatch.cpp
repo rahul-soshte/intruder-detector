@@ -1,32 +1,52 @@
-#include<stdio.h>
-#include<opencv2/opencv.hpp>
+#include <iostream>
+#include "opencv2/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
 
-using namespace cv;
+
+ using namespace cv;
+ int threshold_value=118
+ int threshold_type=0;
+ int max_BINARY_value=threshold_value;
+
+void Threshold_Demo(int,void*);
+const char* window_name = "thief";
+Mat image,image_gray,dst;
 
 int main(int argc,char** argv)
 {
 CvCapture* webcam=cvCreateCameraCapture(0);
 if(!webcam)
 {
-	//Exit with an error
-	
+	return -1;
+
 }
 while(1)
 {
-Mat image=cvQueryFrame(webcam);
-
+image=cvQueryFrame(webcam);
 if(image)
 {
 //Process it;
-//Threshold binary inverted
+//Threshold binary
+cvtColor(image,image_gray,CV_BGR2GRAY);
 
-//if there is a thief in the image use the following code
-//cvSaveImage("somefile.jpg",image,0);
+//Initialized
+threshold(image_gray,threshold_value,max_BINARY_value,threshold_type);
+//Output Video
+imshow(window_name,dst);
+
+cvNamedWindow(window_name,1);
+cvShowImage(window_name);
+
+
+//if(/*there is a thief in the image use the following code*/){
+//cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
 
 }
+
+  }
+    }
+
 }
 
-cvNamedWindow("thief",1);
-cvShowImage("Thief");
 
-}
