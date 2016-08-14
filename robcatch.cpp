@@ -36,11 +36,12 @@ threshold(image_gray,threshold_value,max_BINARY_value,threshold_type);
 imshow(window_name,dst);
 
 cvNamedWindow(window_name,1);
+
 cvShowImage(window_name);
 
 
 //if(/*there is a thief in the image use the following code*/){
-//cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
+cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
 
 }
 
