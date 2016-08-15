@@ -9,10 +9,12 @@
  int max_BINARY_value=threshold_value;
 
 const char* window_name = "thief";
-IplImage* image,image_gray,dst;
+Mat image,image_gray,dst;
 
 int main(int argc,char** argv)
 {
+	bool copyData=false;
+
 CvCapture* webcam=cvCreateCameraCapture(0);
 if(!webcam)
 {
@@ -21,7 +23,9 @@ if(!webcam)
 }
 while(1)
 {
-image=cvQueryFrame(webcam);
+const IplImage* image1=cvQueryFrame(webcam);
+Mat image = cv::cvarrToMat(image1); 
+
 if(image)
 {
 //Process it;
