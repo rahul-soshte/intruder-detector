@@ -1,0 +1,9 @@
+Function Documentation
+#c
+cvtColor()
+http://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.html#cvtcolor
+
+#i
+imshow() 
+http://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html#imshow
+
