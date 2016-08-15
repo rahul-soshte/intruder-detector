@@ -36,10 +36,11 @@ cvtColor(image,image_gray,CV_BGR2GRAY);
 threshold(image_gray,dst,threshold_value,max_BINARY_value,threshold_type);
 //Output Video
 imshow(window_name,dst);
-
+/*Optional code but very useful
 cvNamedWindow(window_name,1);
 
 cvShowImage(window_name,image);
+*/
 
 
 //if(/*there is a thief in the image use the following code*/){
