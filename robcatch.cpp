@@ -26,7 +26,7 @@ while(1)
 const IplImage* image1=cvQueryFrame(webcam);
 Mat image = cv::cvarrToMat(image1); 
 
-if(image)
+if(image.data!=NULL)
 {
 //Process it;
 //Threshold binary
