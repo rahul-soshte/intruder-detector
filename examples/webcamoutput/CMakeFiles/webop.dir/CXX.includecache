@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rahul/Desktop/intruder-detector/robcatch.cpp
+/home/rahul/Desktop/intruder-detector/examples/webcamoutput/webop.cpp
 opencv2/opencv.hpp
-/home/rahul/Desktop/intruder-detector/opencv2/opencv.hpp
+/home/rahul/Desktop/intruder-detector/examples/webcamoutput/opencv2/opencv.hpp
 

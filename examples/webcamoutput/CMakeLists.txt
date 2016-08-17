@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( webop )
+find_package( OpenCV REQUIRED )
+add_executable( webop webop.cpp )
+target_link_libraries( webop ${OpenCV_LIBS} )

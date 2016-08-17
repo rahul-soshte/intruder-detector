@@ -1,54 +1,51 @@
-#include <iostream>
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
-#include "opencv2/highgui.hpp"
+//#include <iostream>
+//#include "opencv2/imgproc.hpp"
+//#include "opencv2/imgcodecs.hpp"
+//#include "opencv2/highgui.hpp"
+#include "opencv2/opencv.hpp"
+ 
  using namespace cv;
 
  int threshold_value=118;
  int threshold_type=0;
- int max_BINARY_value=threshold_value;
+ int max_BINARY_value=255;
 
-const char* window_name = "thief";
-Mat image,image_gray,dst;
 
 int main(int argc,char** argv)
 {
-	bool copyData=false;
+	VideoCapture cap(0);
+	if (!cap.isOpened())
+	{
+		/* code */
+		return -1;
 
-CvCapture* webcam=cvCreateCameraCapture(0);
-if(!webcam)
-{
-	return -1;
+	}
 
-}
-while(1)
-{
-const IplImage* image1=cvQueryFrame(webcam);
-Mat image = cv::cvarrToMat(image1); 
+Mat image_gray,dst;
+namedWindow("image_gray",1);
 
-if(image.data!=NULL)
+for(;;)
 {
+
+Mat frame;
+cap>>frame;
+cvtColor(frame, image_gray, CV_BGR2GRAY);
 //Process it;
 //Threshold binary
-cvtColor(image,image_gray,CV_BGR2GRAY);
-
 //Initialized
-threshold(image_gray,dst,threshold_value,max_BINARY_value,threshold_type);
+//threshold(image_gray,dst,threshold_value,max_BINARY_value,threshold_type);
 //Output Video
-imshow(window_name,dst);
-/*Optional code but very useful
-cvNamedWindow(window_name,1);
-
-cvShowImage(window_name,image);
-*/
-
+imshow("image_gray",image_gray);
 
 //if(/*there is a thief in the image use the following code*/){
 //cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
+if(waitKey(30)>=0) break;
 
 }
 
-  }
+  return 0;
+
+
     }
 
 
