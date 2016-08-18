@@ -23,6 +23,7 @@ int main(int argc,char** argv)
 
 Mat image_gray,dst;
 namedWindow("image_gray",1);
+namedWindow("dst",1);
 
 for(;;)
 {
@@ -33,9 +34,11 @@ cvtColor(frame, image_gray, CV_BGR2GRAY);
 //Process it;
 //Threshold binary
 //Initialized
-//threshold(image_gray,dst,threshold_value,max_BINARY_value,threshold_type);
+threshold(image_gray,dst,threshold_value,max_BINARY_value,0);
 //Output Video
 imshow("image_gray",image_gray);
+
+imshow("dst",dst);
 
 //if(/*there is a thief in the image use the following code*/){
 //cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
