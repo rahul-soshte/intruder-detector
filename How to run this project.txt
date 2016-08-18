@@ -1,3 +1,0 @@
-How to run this project:
-cd(Directory of project)
-make
