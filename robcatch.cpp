@@ -6,7 +6,7 @@
  
  using namespace cv;
 
- int threshold_value=118;
+ int threshold_value=80;
  int threshold_type=0;
  int max_BINARY_value=255;
 
@@ -24,21 +24,24 @@ int main(int argc,char** argv)
 Mat image_gray,dst;
 namedWindow("image_gray",1);
 namedWindow("dst",1);
+namedWindow("frame",1);
+
 
 for(;;)
 {
 
 Mat frame;
 cap>>frame;
-cvtColor(frame, image_gray, CV_BGR2GRAY);
+cvtColor(frame, image_gray, CV_RGB2GRAY);
 //Process it;
 //Threshold binary
 //Initialized
-threshold(image_gray,dst,threshold_value,max_BINARY_value,0);
+threshold(image_gray,dst,threshold_value,max_BINARY_value,threshold_type);
 //Output Video
 imshow("image_gray",image_gray);
 
 imshow("dst",dst);
+imshow("frame",frame);
 
 //if(/*there is a thief in the image use the following code*/){
 //cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
