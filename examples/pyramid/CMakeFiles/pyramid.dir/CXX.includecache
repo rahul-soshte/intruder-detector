@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rahul/Desktop/intruder-detector/examples/pyramid/pyramid.cpp
+opencv2/imgproc.hpp
+/home/rahul/Desktop/intruder-detector/examples/pyramid/opencv2/imgproc.hpp
+opencv2/imgcodecs.hpp
+/home/rahul/Desktop/intruder-detector/examples/pyramid/opencv2/imgcodecs.hpp
+opencv2/highgui.hpp
+/home/rahul/Desktop/intruder-detector/examples/pyramid/opencv2/highgui.hpp
+

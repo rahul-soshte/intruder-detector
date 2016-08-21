@@ -7,3 +7,10 @@ http://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.htm
 imshow() 
 http://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html#imshow
 
+#p
+pyrDown()
+http://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=pyrdown#pyrdown
+
+pyrUp()
+http://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=pyrdown#pyrUp
+

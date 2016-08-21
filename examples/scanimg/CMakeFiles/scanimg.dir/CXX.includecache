@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rahul/Desktop/intruder-detector/examples/scanimg/scanimg.cpp
+opencv2/core.hpp
+-
+opencv2/core/utility.hpp
+-
+opencv2/imgcodecs.hpp
+/home/rahul/Desktop/intruder-detector/examples/scanimg/opencv2/imgcodecs.hpp
+opencv2/highgui.hpp
+-
+iostream
+-
+sstream
+-
+

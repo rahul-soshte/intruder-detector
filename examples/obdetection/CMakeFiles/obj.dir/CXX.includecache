@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rahul/Desktop/intruder-detector/examples/obdetection/obj.cpp
+opencv2/objdetect.hpp
+/home/rahul/Desktop/intruder-detector/examples/obdetection/opencv2/objdetect.hpp
+opencv2/videoio.hpp
+/home/rahul/Desktop/intruder-detector/examples/obdetection/opencv2/videoio.hpp
+opencv2/highgui.hpp
+/home/rahul/Desktop/intruder-detector/examples/obdetection/opencv2/highgui.hpp
+opencv2/imgproc.hpp
+/home/rahul/Desktop/intruder-detector/examples/obdetection/opencv2/imgproc.hpp
+iostream
+-
+stdio.h
+-
+
