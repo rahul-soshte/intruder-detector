@@ -1,10 +1,10 @@
 18/8/2016
-Team Objective 1:Correctly vary the threshold output.Done kept threshold at 80(binary)
+Team Objective 1:Correctly vary the threshold output.Done kept threshold at 80(binary)-Done
 19/8/2016
-Team Objective 2:Code to take whether a image has intruder or not(Farneback Optical)
+Team Objective 2:Code to take whether a image has intruder or not(Farneback Optical)-Done
 20/8/16
 2.1.Learn objection detection module
-2.2.Learn Image Pyramid and Image Sa
+2.2.Learn Image Pyramid-Done
 2.3.Smoothing Images
 2.4.Optical Flow
 
