@@ -16,7 +16,8 @@ int DELAY_CAPTION = 1500;
 int DELAY_BLUR = 100;
 int MAX_KERNEL_LENGTH = 31;
 
-Mat src; Mat dst;
+Mat src;
+ Mat dst;
 char window_name[] = "Smoothing Demo";
 
 /// Function headers
@@ -27,6 +28,7 @@ int display_dst( int delay );
 /**
  * function main
  */
+
 int main( void )
 {
   namedWindow( window_name, WINDOW_AUTOSIZE );

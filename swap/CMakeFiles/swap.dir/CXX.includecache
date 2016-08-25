@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rahul/Desktop/intruder-detector/swap/swap.cpp
+opencv2/opencv.hpp
+/home/rahul/Desktop/intruder-detector/swap/opencv2/opencv.hpp
+iostream
+-
+
