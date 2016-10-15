@@ -1,19 +1,10 @@
 18/8/2016
-Team Objective 1:Correctly vary the threshold output.Done kept threshold at 80(binary)-Done
+Team Objective 1:Correctly vary the threshold output.Done kept threshold at 80(binary)
 19/8/2016
-Team Objective 2:Code to take whether a image has intruder or not(Farneback Optical)-Done
+Team Objective 2:Code to take whether a image has intruder or not(Farneback Optical)
 20/8/16
 2.1.Learn objection detection module
-2.2.Learn Image Pyramid-Done
+2.2.Learn Image Pyramid and Image 
 2.3.Smoothing Images
 2.4.Optical Flow
-The above things cannot be leaned in a jiffy
-will take timw
-
-25/08/16
-Dividing the calcOpticalFlowFarneback parameters and working with them individually
-like swap function  was done but its in a seperate file
-
-Working with 3rd parameter of the function is important.
-
 

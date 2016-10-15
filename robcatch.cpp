@@ -74,8 +74,16 @@ Parameters:
              winsize for a Gaussian window should be set to a larger value to achieve the same level of robustness.
 
  */
-calcOpticalFlowFarneback(prev_dst,dst,)         
+ //Optical Flow
 
+ //Build its Pyramid 
+ //Use the DownScaled Version for detection
+ //For iteration create lookup table
+ //            
+//Farneback Function             
+calcOpticalFlowFarneback(prev_dst,dst,0.5,         
+//swap function 
+    
 //And then above a number it will giv output as thief caught
 //if(/*there is a thief in the image use the following code*/){
 //cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
