@@ -4,19 +4,36 @@
 #include "opencv2/highgui.hpp"
 #include "opencv2/opencv.hpp"
  
- using namespace cv;
+#include "opencv2/video/tracking.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/videoio.hpp"
+#include "opencv2/highgui.hpp"
+
+using namespace cv;
+using namespace std;
 
  int threshold_value=80;
  int threshold_type=0;
  int max_BINARY_value=255;
 
+ static void help()
+{
+    cout <<
+            "\nThis program demonstrates dense optical flow algorithm by Gunnar Farneback\n"
+            "Mainly the function: calcOpticalFlowFarneback()\n"
+            "Call:\n"
+            "./fback\n"
+            "This reads from video camera 0\n" << endl;
+}
+/************************
+not copy main
 
 int main(int argc,char** argv)
 {
 	VideoCapture cap(0);
 	if (!cap.isOpened())
 	{
-		/* code */
+
 		return -1;
 
 	}
@@ -73,7 +90,7 @@ Parameters:
              optical flow estimation; usually, this option gives z more accurate flow than with a box filter, at the cost of lower speed; normally,
              winsize for a Gaussian window should be set to a larger value to achieve the same level of robustness.
 
- */
+
  //Optical Flow
 
  //Build its Pyramid 
@@ -85,16 +102,65 @@ calcOpticalFlowFarneback(prev_dst,dst,0.5,
 //swap function 
     
 //And then above a number it will giv output as thief caught
-//if(/*there is a thief in the image use the following code*/){
+//if(/*there is a thief in the image use the following code){
 //cvSaveImage("/home/rahul/Dropbox/rahul.jpg",image,0);
 if(waitKey(30)>=0) break;
 
 }
 
+
   return 0;
 
 
     }
+*/
+static void drawOptFlowMap(const Mat& flow, Mat& cflowmap, int step,
+                    double, const Scalar& color)
+{
+    for(int y = 0; y < cflowmap.rows; y += step)
+        for(int x = 0; x < cflowmap.cols; x += step)
+        {
+            const Point2f& fxy = flow.at<Point2f>(y, x);
+            line(cflowmap, Point(x,y), Point(cvRound(x+fxy.x), cvRound(y+fxy.y)),
+                 color);
+            circle(cflowmap, Point(x,y), 2, color, -1);
+        }
+}
 
+int main(int argc, char** argv)
+{
+    cv::CommandLineParser parser(argc, argv, "{help h||}");
+    if (parser.has("help"))
+    {
+        help();
+        return 0;
+    }
+    VideoCapture cap(0);
+    help();
+    if( !cap.isOpened() )
+        return -1;
 
+    Mat flow, cflow, frame;
+    UMat gray, prevgray, uflow;
+    namedWindow("flow", 1);
+
+    for(;;)
+    {
+        cap >> frame;
+        cvtColor(frame, gray, COLOR_BGR2GRAY);
+
+        if( !prevgray.empty() )
+        {
+            calcOpticalFlowFarneback(prevgray, gray, uflow, 0.5, 3, 15, 3, 5, 1.2, 0);
+            cvtColor(prevgray, cflow, COLOR_GRAY2BGR);
+            uflow.copyTo(flow);
+            drawOptFlowMap(flow, cflow, 16, 1.5, Scalar(0, 255, 0));
+            imshow("flow", cflow);
+        }
+        if(waitKey(30)>=0)
+            break;
+        std::swap(prevgray, gray);
+    }
+    return 0;
+}
 
