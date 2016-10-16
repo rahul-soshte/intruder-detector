@@ -114,21 +114,27 @@ if(waitKey(30)>=0) break;
 
     }
 */
+    /*
 static void drawOptFlowMap(const Mat& flow, Mat& cflowmap, int step,
-                    double, const Scalar& color)
+                    double, const Scalar& color,Mat& frame)
 {
+
     for(int y = 0; y < cflowmap.rows; y += step)
         for(int x = 0; x < cflowmap.cols; x += step)
         {
             const Point2f& fxy = flow.at<Point2f>(y, x);
-            line(cflowmap, Point(x,y), Point(cvRound(x+fxy.x), cvRound(y+fxy.y)),
-                 color);
-            circle(cflowmap, Point(x,y), 2, color, -1);
-        }
-}
+           const Point2f& fxyprev=fxy;
 
+
+          line(cflowmap, Point(x,y), Point(cvRound(x+fxy.x), cvRound(y+fxy.y)),color);
+            //circle(cflowmap, Point(x,y), 2, color, -1);
+   imwrite("/home/rahul/images/rahul.jpg",frame);
+    }
+}
+*/
 int main(int argc, char** argv)
 {
+	int m=0;
     cv::CommandLineParser parser(argc, argv, "{help h||}");
     if (parser.has("help"))
     {
@@ -151,11 +157,45 @@ int main(int argc, char** argv)
 
         if( !prevgray.empty() )
         {
-            calcOpticalFlowFarneback(prevgray, gray, uflow, 0.5, 3, 15, 3, 5, 1.2, 0);
-            cvtColor(prevgray, cflow, COLOR_GRAY2BGR);
-            uflow.copyTo(flow);
-            drawOptFlowMap(flow, cflow, 16, 1.5, Scalar(0, 255, 0));
-            imshow("flow", cflow);
+            calcOpticalFlowFarneback(prevgray, gray, flow, 0.5, 3, 15, 3, 5, 1.2, 0);
+
+          
+          //  cvtColor(prevgray, cflow, COLOR_GRAY2BGR);
+         
+            //drawOptFlowMap(flow, cflow, 16, 1.5, Scalar(0, 255, 0));
+
+           imshow("flow", gray);
+           //m=buildOpticalFlowPyramid(flow,cflow,Size(15,15),5,true,BORDER_REFLECT_101,BORDER_CONSTANT,false);
+/*if (m>5)
+{
+   imwrite("/home/rahul/images/rahul.jpg",frame);
+}
+*/
+    //cv::absdiff(prevgray,gray, flow);
+
+//    cv::Mat foregroundMask = cv::Mat::zeros(flow.rows, flow.cols, CV_8UC1);
+
+    float threshold = 440.0f;
+    float dist;
+
+    for(int j=0; j<flow.rows; ++j)
+        for(int i=0; i<flow.cols; ++i)
+        {
+            cv::Vec3b pix = flow.at<cv::Vec3b>(j,i);
+
+            dist = (pix[0]*pix[0] + pix[1]*pix[1] + pix[2]*pix[2]);
+            dist = sqrt(dist);
+
+            if(dist>threshold)
+            {
+               // foregroundMask.at<unsigned char>(j,i) = 255;
+            	   imwrite("/home/rahul/images/rahul.jpg",frame);
+            	   exit(1);
+
+ 
+            }
+        }
+
         }
         if(waitKey(30)>=0)
             break;

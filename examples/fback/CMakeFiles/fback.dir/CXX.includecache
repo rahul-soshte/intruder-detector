@@ -7,6 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/rahul/Desktop/intruder-detector/examples/fback/fback.cpp
+opencv2/imgproc.hpp
+/home/rahul/Desktop/intruder-detector/examples/fback/opencv2/imgproc.hpp
+opencv2/videoio.hpp
+/home/rahul/Desktop/intruder-detector/examples/fback/opencv2/videoio.hpp
+opencv2/highgui.hpp
+/home/rahul/Desktop/intruder-detector/examples/fback/opencv2/highgui.hpp
+iostream
+-
 opencv2/video/tracking.hpp
 /home/rahul/Desktop/intruder-detector/examples/fback/opencv2/video/tracking.hpp
 opencv2/imgproc.hpp
@@ -16,5 +24,7 @@ opencv2/videoio.hpp
 opencv2/highgui.hpp
 /home/rahul/Desktop/intruder-detector/examples/fback/opencv2/highgui.hpp
 iostream
+-
+ctype.h
 -
 
