@@ -132,6 +132,13 @@ static void drawOptFlowMap(const Mat& flow, Mat& cflowmap, int step,
     }
 }
 */
+/*
+float euclideanDist(Point& p, Point& q) {
+    Point diff = p - q;
+    return cv::sqrt(diff.x*diff.x + diff.y*diff.y);
+}
+*/
+
 int main(int argc, char** argv)
 {
 	int m=0;
@@ -175,16 +182,24 @@ int main(int argc, char** argv)
 
 //    cv::Mat foregroundMask = cv::Mat::zeros(flow.rows, flow.cols, CV_8UC1);
 
-    float threshold = 440.0f;
+    float threshold = 10.0f;
     float dist;
 
     for(int j=0; j<flow.rows; ++j)
         for(int i=0; i<flow.cols; ++i)
         {
-            cv::Vec3b pix = flow.at<cv::Vec3b>(j,i);
+           // cv::Vec3b pix = flow.at<cv::Vec3b>(j,i);
+        	  Point2f& fxy = flow.at<Point2f>(j, i);
 
-            dist = (pix[0]*pix[0] + pix[1]*pix[1] + pix[2]*pix[2]);
-            dist = sqrt(dist);
+        	           //dist=euclideanDist(Point2f a(i,j),Point2f b(cvRound(i+fxy.x),cvRound(j+fxy.y)));
+// line(cflowmap, Point(x,y), Point(cvRound(x+fxy.x), cvRound(y+fxy.y)),color);
+            //dist = (pix[0]*pix[0] + pix[1]*pix[1] + pix[2]*pix[2]);
+               //cv::Scalar pix = flow.at<cv::Scalar>(j,i);
+               //dist=pix[0];
+            //dist = sqrt(dist);
+Point2f a(i,j);
+Point2f b(i+fxy.x,j+fxy.y);
+double dist = cv::norm(cv::Mat(a),cv::Mat(b));
 
             if(dist>threshold)
             {
@@ -203,4 +218,3 @@ int main(int argc, char** argv)
     }
     return 0;
 }
-
