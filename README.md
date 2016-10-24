@@ -49,7 +49,11 @@ cvSaveImage()
 cvNamedWindow()
 cvShowImage()
 
-Release Date:15th October.2015.
+Release Date:15th October.2016.
+Released on:25th October,2016.
+
+I am gonna release the full Documentation Soon--
+
 
 
 
