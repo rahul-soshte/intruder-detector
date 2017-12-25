@@ -1,15 +1,9 @@
 # intruder-detector
-This is C++ project
+This is a C++ project.
 
 What will it do
 -Detects an intruder through the webcam 
 -uploads the images on Google Drive
-
-What tools are gonna be used
--Opencv(Open Source Computer Vision Library)
--Notepad++
--Cmake
--Gcc(GNU Complier Collection)
 
 What is Opencv?
 OpenCV (Open Source Computer Vision Library) is 
@@ -31,7 +25,7 @@ find similar images from an image database,
 remove red eyes from images taken using flash, follow eye movements, 
 recognize scenery and establish markers to overlay it with augmented reality, etc. 
 
-I am using Ubuntu 15.10.so for the linux users here's how to install
+How to install OpenCV
 http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html#linux-installation
 
 How to use gcc and Cmake
@@ -39,20 +33,6 @@ http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_gcc_cmake/linux_gcc_
 
 Download:Search and download it from Google
 Version:Opencv-3.0.0
-
-Functions i probably gonna used
-cvQueryFrame()
-cvGetCaptureProperty()
-cvCalcOpticalFlowFarneback()
-Mat Class
-cvSaveImage()
-cvNamedWindow()
-cvShowImage()
-
-Release Date:15th October.2016.
-Released on:25th October,2016.
-
-I am gonna release the full Documentation Soon--
 
 
 

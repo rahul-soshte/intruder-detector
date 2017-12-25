@@ -1,1 +1,0 @@
-/home/rahul/Desktop/intruder-detector/examples/smoothing/CMakeFiles/smoothing.dir

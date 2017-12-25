@@ -1,1 +1,0 @@
-/home/rahul/Desktop/intruder-detector/swap/CMakeFiles/swap.dir

@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project( swap )
-find_package( OpenCV REQUIRED )
-add_executable( swap swap.cpp )
-target_link_libraries( swap ${OpenCV_LIBS} )
