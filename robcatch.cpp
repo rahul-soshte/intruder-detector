@@ -71,7 +71,7 @@ double dist = cv::norm(cv::Mat(a),cv::Mat(b));
             if(dist>threshold)
             {
                // foregroundMask.at<unsigned char>(j,i) = 255;
-            	   imwrite("/home/rahul/images/rahul.jpg",frame);
+            	   imwrite("/home/hunter/Desktop/rahul.jpg",frame);
             	   exit(1);
 
  
